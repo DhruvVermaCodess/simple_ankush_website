@@ -5,52 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suggestion Page</title>
     <style>
+        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .s {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: url('./assets/wp2446902.webp') no-repeat center center/cover;
+
         }
 
         .container {
             max-width: 700px;
-            margin: 50px auto;
+            width: 100%;
             padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: transparent;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: #333;
         }
 
         h1 {
             text-align: center;
+            font-size: 2rem;
             margin-bottom: 20px;
-            font-size: 24px;
-            color: #1a73e8;
+            color: #2575fc;
         }
 
+        /* Form Styles */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         label {
             display: block;
-            font-size: 14px;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
             font-weight: bold;
-            color: #555;
+            margin-bottom: 6px;
+            color: white;
         }
 
-        input[type="text"], input[type="email"], textarea, select {
+        input[type="text"], 
+        input[type="email"], 
+        textarea, 
+        select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        input[type="radio"], input[type="checkbox"] {
-            margin-right: 8px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background: #f9f9f9;
         }
 
         textarea {
@@ -59,17 +72,18 @@
 
         button.submit-btn {
             width: 100%;
-            padding: 12px;
-            background-color: #1a73e8;
+            padding: 14px;
+            background: #2575fc;
             color: #fff;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 1rem;
             cursor: pointer;
+            transition: background 0.3s ease;
         }
 
         button.submit-btn:hover {
-            background-color: #155ab6;
+            background: #1d5ebd;
         }
 
         .form-group-inline {
@@ -82,19 +96,26 @@
         }
 
         .form-group label.inline-label {
-            display: inline;
+            display: inline-block;
             margin-right: 10px;
+            font-weight: normal;
         }
 
+        input[type="radio"], 
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        /* Navbar Styles */
         .navbar {
-            background-color: #2c3e50;
-            color: white;
+            background: #333;
+            color: #fff;
             padding: 1rem;
             text-align: center;
         }
 
         .navbar a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
@@ -102,7 +123,7 @@
         }
 
         .navbar a:hover {
-            color: #3498db;
+            color: #2575fc;
         }
     </style>
 </head>
@@ -116,79 +137,80 @@
         <a href="soil-pollution.html">Soil Pollution</a>
         <a href="suggestions.html">Suggestions</a>
     </div>
-
-    <div class="container">
-        <h1>Please Give Your Valuable Suggestions</h1>
-        <form>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="address">H.no/Street Name/City:</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address">
-            </div>
-            <div class="form-group-inline">
-                <div>
-                    <label for="state">State:</label>
-                    <input type="text" id="state" name="state" placeholder="Enter your state">
+    <div class="s">
+        <div class="container">
+            <h1>Please Give Your Valuable Suggestions</h1>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
                 </div>
-                <div>
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone" placeholder="Enter your phone">
+                <div class="form-group">
+                    <label for="address">H.no/Street Name/City:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your address">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label>Gender:</label>
-                <label class="inline-label">
-                    <input type="radio" id="male" name="gender" value="Male">
-                    Male
-                </label>
-                <label class="inline-label">
-                    <input type="radio" id="female" name="gender" value="Female">
-                    Female
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="occupation">Occupation:</label>
-                <select id="occupation" name="occupation">
-                    <option value="School Student">School Student</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Professional">Professional</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Pollution Type:</label>
-                <label class="inline-label">
-                    <input type="checkbox" id="air" name="pollution" value="Air Pollution">
-                    Air Pollution
-                </label>
-                <label class="inline-label">
-                    <input type="checkbox" id="water" name="pollution" value="Water Pollution">
-                    Water Pollution
-                </label>
-                <label class="inline-label">
-                    <input type="checkbox" id="soil" name="pollution" value="Soil Pollution">
-                    Soil Pollution
-                </label>
-                <label class="inline-label">
-                    <input type="checkbox" id="other" name="pollution" value="Other">
-                    Other
-                </label>
-            </div>
-            <div class="form-group">
-                <label for="measures">Preventive Measures:</label>
-                <textarea id="measures" name="measures" rows="4" placeholder="Enter your suggestions"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="submit-btn">Post Your Suggestions</button>
-            </div>
-        </form>
+                <div class="form-group-inline">
+                    <div>
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" placeholder="Enter your state">
+                    </div>
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter your phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <label class="inline-label">
+                        <input type="radio" id="male" name="gender" value="Male">
+                        Male
+                    </label>
+                    <label class="inline-label">
+                        <input type="radio" id="female" name="gender" value="Female">
+                        Female
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation:</label>
+                    <select id="occupation" name="occupation">
+                        <option value="School Student">School Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pollution Type:</label>
+                    <label class="inline-label">
+                        <input type="checkbox" id="air" name="pollution" value="Air Pollution">
+                        Air Pollution
+                    </label>
+                    <label class="inline-label">
+                        <input type="checkbox" id="water" name="pollution" value="Water Pollution">
+                        Water Pollution
+                    </label>
+                    <label class="inline-label">
+                        <input type="checkbox" id="soil" name="pollution" value="Soil Pollution">
+                        Soil Pollution
+                    </label>
+                    <label class="inline-label">
+                        <input type="checkbox" id="other" name="pollution" value="Other">
+                        Other
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="measures">Preventive Measures:</label>
+                    <textarea id="measures" name="measures" rows="4" placeholder="Enter your suggestions"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Post Your Suggestions</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
